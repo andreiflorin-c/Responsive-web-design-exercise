@@ -1,0 +1,73 @@
+// In :root se seteaza variabile pentru culori, pentru a fi mai usor de schimbat in viitor 
+:root {
+    --navy-blue: rgb(5, 0, 130);
+    --blue: rgb(0, 0, 255);
+    --light-sky-blue: rgb(135, 206, 250);
+    --light-cyan: rgb(224, 255, 255);
+}
+
+// Familia de fonturi se aplica in tot corpul documentului
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+// Titlul "Laptops"
+h1 {
+    color: var(--navy-blue);
+    font-size: 120px;
+    margin-top: 50px;
+}
+
+// Numele produselor
+h2 {
+    font-size: 2em;
+}
+
+// Preturile
+h3 {
+    color: var(--blue);
+}
+
+// Cardurile cu produse, proprietati imbricate
+.laptop-grid {
+    // Proprietati pentru intregul container
+    // Flexbox layout
+    display: flex;
+    // Elementele care nu mai incap pe un rand se duc pe urmatorul
+    flex-wrap: wrap;
+    // Spatiu uniform intre elemente
+    justify-content: space-evenly;
+    // Proprietati pentru div-urile din cadrul container-ului
+    div {
+        // Border
+        border-width: 2px;
+        border-color: var(--light-sky-blue);
+        // Linie punctata
+        border-style: dashed;
+        // Rotunjire la colturi
+        border-radius: 25px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        // Proprietati pentru imaginile din div-uri
+        img {
+            height: 200px;
+        }
+    }
+    // Proprietate activata la hover cu mouse-ul, se modifica culoarea de fundal si stilul border-ului
+    div:hover {
+        background-color: var(--light-cyan);
+        border-style: solid;
+    }
+}
+
+// Media query activat la ingustarea ferestrei / pentru ecrane sub 1600px latime
+@media only screen and (max-width: 1600px) {
+    .laptop-grid div img {
+        height: 100px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
